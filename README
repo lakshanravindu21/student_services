@@ -1,0 +1,222 @@
+Sure bro! Here is a **complete, clean, professional README.md** for your GitHub repo
+**student_services** (5 microservices).
+Just copy–paste this into your root folder:
+
+```
+student_services/
+   README.md  ← paste here
+   studentservice/
+   courseservice/
+   enrollmentservice/
+   resultservice/
+   notificationservice/
+```
+
+---
+
+# ✅ **README.md (FULLY READY — Copy & Paste)**
+
+````markdown
+# 🎓 Student Course Portal — Microservices System  
+### Microservices & Cloud Computing Assignment (University of Sri Jayewardenepura)
+
+This project implements a **simple microservices ecosystem (5 independent services)** using **Spring Boot**, each running on a separate port, each with its own database, and communicating using **REST API** calls.
+
+---
+
+## 📌 **Microservices Architecture**
+
+| Service Name        | Port | Database Name        | Description |
+|---------------------|------|-----------------------|-------------|
+| Student Service     | 8081 | `student_db`          | Manage students (create, list, get by ID) |
+| Course Service      | 8082 | `course_db`           | Manage courses (create, list, get by ID) |
+| Enrollment Service  | 8083 | `enrollment_db`       | Enroll students into courses (validates Student + Course services) |
+| Result Service      | 8084 | `result_db`           | Store & view student results |
+| Notification Service| 8085 | `notification_db`     | Prints a simple notification message |
+
+Each service is **independent**, **runs separately**, and uses its own **MySQL database**.
+
+---
+
+## 🛠️ **Technologies Used**
+
+- Java 17  
+- Spring Boot  
+- Spring Web  
+- Spring Data JPA  
+- MySQL  
+- Lombok  
+- WebClient (for inter-service REST calls)  
+- Maven  
+
+---
+
+## ⚙️ **Before Running — Create Databases**
+
+Start **XAMPP** (Apache + MySQL).  
+Open **phpMyAdmin** → run these:
+
+```sql
+CREATE DATABASE student_db;
+CREATE DATABASE course_db;
+CREATE DATABASE enrollment_db;
+CREATE DATABASE result_db;
+CREATE DATABASE notification_db;
+````
+
+---
+
+## 🚀 **How to Run All Microservices**
+
+Navigate into each project folder and run:
+
+```bash
+mvn clean package
+mvn spring-boot:run
+```
+
+### 📌 Required ports:
+
+* Student Service → **8081**
+* Course Service → **8082**
+* Enrollment Service → **8083**
+* Result Service → **8084**
+* Notification Service → **8085**
+
+Make sure ports are not used by other apps.
+
+---
+
+## 🧪 **Testing Using Postman or Curl**
+
+### ➤ **1. Create a Student**
+
+```
+POST http://localhost:8081/students
+Body:
+{
+  "name": "Ravindu",
+  "email": "r@example.com"
+}
+```
+
+### ➤ **2. Create a Course**
+
+```
+POST http://localhost:8082/courses
+Body:
+{
+  "title": "DB",
+  "description": "Databases"
+}
+```
+
+### ➤ **3. Enroll Student into Course**
+
+```
+POST http://localhost:8083/enroll
+Body:
+{
+  "studentId": 1,
+  "courseId": 1
+}
+```
+
+This service will:
+✔ Validate Student Service
+✔ Validate Course Service
+✔ Save enrollment
+✔ Call Notification Service
+
+---
+
+### ➤ **4. Get Enrollments for a Student**
+
+```
+GET http://localhost:8083/enrollments/student/1
+```
+
+---
+
+### ➤ **5. Add a Result**
+
+```
+POST http://localhost:8084/results
+Body:
+{
+  "studentId": 1,
+  "courseId": 1,
+  "grade": "A"
+}
+```
+
+---
+
+### ➤ **6. Get Results for a Student**
+
+```
+GET http://localhost:8084/results/student/1
+```
+
+---
+
+### ➤ **7. Test Notification Manually**
+
+```
+POST http://localhost:8085/notify/enrollment
+Body:
+{
+  "studentId": 1,
+  "courseId": 1
+}
+```
+
+Expected output:
+
+```
+Student 1 enrolled into Course 1
+```
+
+---
+
+## 📁 **Project Structure**
+
+```
+student_services/
+│── studentservice/
+│── courseservice/
+│── enrollmentservice/
+│── resultservice/
+│── notificationservice/
+└── README.md
+```
+
+---
+
+## 📝 **Assignment Requirements Checklist**
+
+✔ 5 independent microservices
+✔ Each service has its own database
+✔ CRUD operations
+✔ REST API communication
+✔ WebClient used for inter-service calls
+✔ JSON DTO request/response
+✔ Services run separately
+✔ Uses proper ports
+✔ Logging & notification
+
+Everything in the assignment is implemented.
+
+---
+
+## 👨‍💻 **Author**
+
+**Galathura Nekathige Ravindu Lakshan**
+IT undergraduate — USJ
+GitHub: [https://github.com/lakshanravindu21](https://github.com/lakshanravindu21)
+
+---
+
+## ✔️ End of README
+
+
