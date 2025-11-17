@@ -1,15 +1,4 @@
-student_services/
-   README.md  ← paste here
-   studentservice/
-   courseservice/
-   enrollmentservice/
-   resultservice/
-   notificationservice/
-```
-
----
-
-# ✅ **README.md (FULLY READY — Copy & Paste)**
+# ✅ **README.md **
 
 ````markdown
 # 🎓 Student Course Portal — Microservices System  
